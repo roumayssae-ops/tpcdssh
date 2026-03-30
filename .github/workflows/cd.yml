@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/Checkout@v3
+        uses: actions/checkout@v3
 
       - name: Set up Docker
         uses: docker/setup-buildx-action@v2
@@ -33,4 +33,4 @@ jobs:
           echo "${{ secrets.SSH_KEY }}" > key.pem
           chmod 600 key.pem
           ssh -i key.pem -o StrictHostKeyChecking=no "${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}" \
-          "power shell -ExecutionPolicy Bypass -File 'C:\Users\pc\OneDrive\Desktop\tpssh1\deploy.ps1' -DockerUser ${{ secrets.DOCKERHUB_USERNAME }} -DockerToken ${{ secrets.DOCKERHUB_TOKEN }}"
+          "powershell -ExecutionPolicy Bypass -File 'C:/Users/pc/OneDrive/Desktop/tpssh1/deploy.ps1' -DockerUser ${{ secrets.DOCKERHUB_USERNAME }} -DockerToken ${{ secrets.DOCKERHUB_TOKEN }}"
