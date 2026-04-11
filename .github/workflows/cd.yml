@@ -33,9 +33,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
-          tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/flask_devops_demo:latest
-            ${{ secrets.DOCKERHUB_USERNAME }}/flask_devops_demo:${{ github.sha }}
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/flask_devops_demo:latest
 
       - name: Set up SSH agent
         uses: webfactory/ssh-agent@v0.8.0
