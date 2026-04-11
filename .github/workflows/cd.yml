@@ -40,4 +40,4 @@ jobs:
       - name: Deploy via SSH
         run: |
           ssh -o StrictHostKeyChecking=no "${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}" \
-          "powershell -ExecutionPolicy Bypass -File 'C:/Users/pc/OneDrive/Desktop/tpssh1/deploy.ps1' -DockerUser ${{ secrets.DOCKERHUB_USERNAME }} -DockerToken ${{ secrets.DOCKERHUB_TOKEN }}"
+          "powershell -ExecutionPolicy Bypass -File 'C:/Users/pc/tpcdssh/tpssh1/deploy.ps1' -DockerUser ${{ secrets.DOCKERHUB_USERNAME }} -DockerToken ${{ secrets.DOCKERHUB_TOKEN }}"
